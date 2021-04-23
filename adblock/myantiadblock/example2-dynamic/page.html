@@ -1,0 +1,80 @@
+<!DOCTYPE html>   
+<html>
+<head>
+
+    <style type="text/css">
+        body {background-color:white;}
+        p {color:blue;}
+    </style>
+
+<style> 
+    .baitClass1{border:1px solid #F00; width:300px; height:300px;background-image:url("https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/tam-ogel/6190b9bbb412b0c9c50c42751b0aa94c_250_250.jpg");background-repeat:no-repeat center} 
+</style> 
+
+<style> 
+    .baitClass2{border:1px solid #F00; width:500px; height:500px;} 
+    .baitClass2 img{
+	width:300px;
+	height:300px;
+}
+</style> 
+
+<script src="jquery.js"></script>
+<script src="antiaddynamic.js"></script>  <!--不能src="A.JS;B.JS"-->
+<meta charset="utf-8"> 
+<title>                  
+动态诱饵广告页面
+</title>
+<meta name="author" content="eriovar">
+
+</head>
+
+<body>
+<!--
+<script>
+    $(document).ready(function()
+    {   //DOM加载完毕
+            $("button").click(function()
+            {
+                $("p").hide();
+            });
+        }
+    );
+</script>
+-->
+<p>
+    <b>
+        Dynamic Baits
+    </b>
+</p>
+<hr>
+<button type="button" onclick="baitFunction1()"> 动态创建div background 诱饵</button>  <!--通过按钮创建的新元素不会在源码中被看到，但是在检查中可以看到-->
+<hr>
+<br>
+<button type="button" onclick="baitFunction2()"> 动态创建div img 诱饵</button>  <!--通过按钮创建的新元素不会在源码中被看到，但是在检查中可以看到-->
+<hr>
+
+
+<div id = QUICK>
+    <hr>
+        <button type="button" onclick="quickbaits()">快速创建诱饵 </button> 
+        <br>
+            <br>
+            <b>快速创建诱饵</b>
+        <br>
+            <br>
+                <img id= "originnal" src="../sample.gif"
+                    alt="orignal gif" height=10% width=10%>
+                    <br>
+
+                <hr>
+    <hr>
+</div>
+
+</body>
+</html>
+
+<!--然后用adblock plus就屏蔽了-->
+
+
+<!-- 基于列表的直接用adb plus即可-->

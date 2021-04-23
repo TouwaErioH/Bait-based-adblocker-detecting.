@@ -1,0 +1,152 @@
+<!DOCTYPE html>   
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <script>
+    /* 实际中应该当页面加载完成后就自动执行anti-adblock函数，这里为了方便演示还是采用按钮
+    window.onload = function(){
+        func1();
+        func2();
+        func3(); 
+    }
+    */
+   function hello(){
+       alert("hello");
+   }
+    </script>
+    <style type="text/css">
+        body {background-color:white;}
+        p {color:blue;}
+    </style>
+
+<style> 
+    .baitClass1{border:1px solid #F00; width:300px; height:300px;background-image:url("https://ecmb.bdimg.com/kmarketingadslogo/9ec1c2fa448d4a8069825f69a10d4007_259_194.jpg");background-repeat:no-repeat center} 
+</style> 
+
+<style> 
+    .baitClass2{border:1px solid #F00; width:500px; height:500px;} 
+    .baitClass2 img{
+	width:300px;
+	height:300px;
+}
+</style> 
+
+<script src="jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
+<script src="antiadstatic.js"></script>  <!--不能src="A.JS;B.JS"-->
+
+<title>                  
+静态诱饵广告页面
+</title>
+<meta name="author" content="eriovar">
+
+</head>
+
+<body>
+
+<p>
+    <b>
+        Static Baits
+    </b>
+</p>
+
+
+<hr>
+    <button type="button" onclick="tupiancheck()">图片诱饵</button> 
+    <br>
+        <br>
+        <b>图片诱饵</b>
+    <br>
+        <br>
+<div>
+    <img id= tupian src="https://ecmb.bdimg.com/kmarketingadslogo/9ec1c2fa448d4a8069825f69a10d4007_259_194.jpg" 
+        alt="图片">
+    <img id= tupian2 src="../9ec1c2fa448d4a8069825f69a10d4007_259_194.jpg"
+        alt="图片2">   <!--同一张图片，url不同，一个过滤一个没有-->  <!--启用图像识别类的block会同时过滤-->
+    <hr>
+</div>
+
+<hr>
+    <button type="button" onclick="multiimg()">多个诱饵,分别记录</button> 
+    <br>
+        <br>
+    <b>多个诱饵</b>
+    <br>
+        <br>
+<!--id加不加引号都可以，标准要加-->
+    <img id= multi1 src="https://iknow-base.cdn.bcebos.com/xuguodongpc.png" 
+        alt="multi-1">
+        <br>
+    <img id= multi2 src="https://ecmb.bdimg.com/kmarketingadslogo/9ec1c2fa448d4a8069825f69a10d4007_259_194.jpg" 
+        alt="multi-2">
+        <br>
+    <img id= multi3 src="https://ss0.bdstatic.com/-0U0b8Sm1A5BphGlnYG/tam-ogel/6190b9bbb412b0c9c50c42751b0aa94c_250_250.jpg" 
+        alt="multi-3">
+    <hr>
+
+
+<hr>
+    <button type="button" onclick="multilevel()">多级检测</button> 
+    <br>
+        <br>
+        <b>多级检测</b>
+    <br>
+        <br>
+    <div  id=multilevel class=baitClass1></div>
+<hr>
+
+
+
+<hr>
+    <button type="button" onclick="littlepixel()">人眼注意不到的小像素 </button> 
+    <br>
+        <br>
+        <b>小像素</b>
+    <br>
+        <br>
+        <img  src="https://www.whu.edu.cn/ch_template/img/logo.png"
+        alt="普通图片">
+        <img  id = "pixel" src="https://mc.yandex.ru/metrika/advert.gif"
+        alt="小像素">  
+    
+<hr>
+
+<hr>
+    <button type="button" onclick="encodecheck()">编码检测 </button> 
+    <br>
+        <br>
+        <b>编码检测</b>
+    <br>
+        <br>
+        <!--id加不加引号都可以，标准要加 small.jpg   small2.jpg表示被广告拦截器改变后的诱饵-->
+            <img id= encodeimg src="../small2.jpg" 
+                alt="encodeimg">
+                <br>
+            <hr>
+        
+    
+<hr>
+
+<div id = chainencode>
+<hr>
+    <button type="button" onclick="chainencodecheck()">连锁编码检测 </button> 
+    <br>
+        <br>
+        <b>连锁编码检测</b>
+    <br>
+        <br>
+        <!--id加不加引号都可以，标准要加    small2用于测表现错误--> 
+            <img id= "chain1" src="../small2.jpg"
+                alt="encodeimg">
+                <br>
+            <p id= "chain2">Sample paragraph</p>
+            <hr>
+<hr>
+</div>
+
+
+
+<button type="button" onclick="test()">test </button> 
+
+</body>
+</html>
